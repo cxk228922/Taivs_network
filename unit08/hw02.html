@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資訊二甲05江寬泓 8-1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #displayText {
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+        label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>網頁調色盤</h2>
+
+<label for="textColor">選擇文字顏色：</label>
+<select id="textColor" onchange="updateColors()">
+    <option value="black">黑</option>
+    <option value="white">白</option>
+    <option value="red">紅</option>
+    <option value="orange">橙</option>
+    <option value="yellow">黃</option>
+    <option value="green">綠</option>
+    <option value="blue">藍</option>
+    <option value="indigo">靛</option>
+    <option value="purple">紫</option>
+</select>
+
+<label for="bgColor">選擇背景顏色：</label>
+<select id="bgColor" onchange="updateColors()">
+    <option value="white">白</option>
+    <option value="black">黑</option>
+    <option value="red">紅</option>
+    <option value="orange">橙</option>
+    <option value="yellow">黃</option>
+    <option value="green">綠</option>
+    <option value="blue">藍</option>
+    <option value="indigo">靛</option>
+    <option value="purple">紫</option>
+</select>
+
+<div id="displayText">這是示範文字。</div>
+
+<script>
+    function updateColors() {
+        var textColor = document.getElementById('textColor').value;
+        var bgColor = document.getElementById('bgColor').value;
+        var displayText = document.getElementById('displayText');
+
+        displayText.style.color = textColor;
+        displayText.style.backgroundColor = bgColor;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>資訊二甲05江寬泓7-4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        function showInput() {
+            const account = document.getElementById("account").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const sex = document.querySelector('input[name="sex"]:checked');
+            const favorites = document.querySelectorAll('input[name="favorite"]:checked');
+            const dislike = document.getElementById("dislike").value;
+
+            let missingFields = [];
+
+            if (!account) missingFields.push("帳號");
+            if (!password) missingFields.push("密碼");
+            if (!sex) missingFields.push("性別");
+            if (favorites.length === 0) missingFields.push("喜歡的科目");
+            if (!dislike) missingFields.push("最不喜歡的科目");
+
+            if (missingFields.length > 0) {
+                alert("以下項目尚未輸入：\n" + missingFields.join("\n"));
+                return;
+            }
+
+            document.getElementById("show_account").textContent = account;
+            document.getElementById("show_password").textContent = password;
+            document.getElementById("show_sex").textContent = sex.value === "female" ? "女" : "男";
+
+            const favoriteSubjects = Array.from(favorites).map(fav => fav.value).join("，");
+            document.getElementById("show_favorite").textContent = favoriteSubjects;
+            document.getElementById("show_dislike").textContent = dislike;
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">下拉選單</h1>
+        <form>
+            <div class="mb-3">
+                <label for="account" class="form-label">帳號：</label>
+                <input type="text" id="account" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">密碼：</label>
+                <input type="password" id="password" class="form-control">
+            </div>
+            <fieldset class="mb-3">
+                <legend>性別選鈕</legend>
+                <div class="form-check">
+                    <input type="radio" name="sex" value="female" id="female" class="form-check-input">
+                    <label for="female" class="form-check-label">女</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="sex" value="male" id="male" class="form-check-input">
+                    <label for="male" class="form-check-label">男</label>
+                </div>
+            </fieldset>
+            <fieldset class="mb-3">
+                <legend>喜歡的科目</legend>
+                <div class="form-check">
+                    <input type="checkbox" name="favorite" value="國文" id="subject1" class="form-check-input">
+                    <label for="subject1" class="form-check-label">國文</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="favorite" value="英文" id="subject2" class="form-check-input">
+                    <label for="subject2" class="form-check-label">英文</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="favorite" value="數學" id="subject3" class="form-check-input">
+                    <label for="subject3" class="form-check-label">數學</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="favorite" value="基本電學" id="subject4" class="form-check-input">
+                    <label for="subject4" class="form-check-label">基本電學</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="favorite" value="電子學" id="subject5" class="form-check-input">
+                    <label for="subject5" class="form-check-label">電子學</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="favorite" value="程式設計" id="subject6" class="form-check-input">
+                    <label for="subject6" class="form-check-label">程式設計</label>
+                </div>
+            </fieldset>
+            <div class="mb-3">
+                <label for="dislike" class="form-label">最不喜歡的科目</label>
+                <select id="dislike" class="form-select">
+                    <option value="">請選擇</option>
+                    <option value="國文">國文</option>
+                    <option value="英文">英文</option>
+                    <option value="數學">數學</option>
+                    <option value="基本電學">基本電學</option>
+                    <option value="電子學">電子學</option>
+                    <option value="程式設計">程式設計</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="showInput()">檢查輸入值</button>
+        </form>
+        <hr>
+        <p>您輸入的帳號為：<span id="show_account" class="text-success"></span></p>
+        <p>您輸入的密碼為：<span id="show_password" class="text-success"></span></p>
+        <p>您點選的性別為：<span id="show_sex" class="text-success"></span></p>
+        <p>您喜歡的科目是：<span id="show_favorite" class="text-primary"></span></p>
+        <p>您最不喜歡的科目是：<span id="show_dislike" class="text-danger"></span></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

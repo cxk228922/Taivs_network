@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資訊二甲05江寬泓</title>
+    <script>
+        let s = "臺北市立大安高工".split('')
+        function Show1(){
+            for(let i=0;i<s.length;i++){
+                document.getElementById("p1").innerHTML += s[i]+"</br>";
+            }
+        }
+        function Show2(){
+            for(let k=1;k<=8;k++){
+                for(let j=0;j<k;j++){
+                    document.getElementById("p1").innerHTML += s[j];
+
+                }
+                document.getElementById("p1").innerHTML += "</br>";
+            }
+        }
+    </script>
+</head>
+<body style="text-align:center;">
+    <p>臺北市立大安高工</p>
+    <div id="p1">
+        <script>
+            Show1()
+            Show2()
+        </script>
+    </div>
+    
+</body>
+</html>

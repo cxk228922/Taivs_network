@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資訊二甲05江寬泓 7-1</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <style>
+        #banner-container {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+        #wanan {
+            width: 20%;
+            height: auto;
+            transition: width 0.5s, height 0.5s;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#banner-container").slideUp(0);
+            $("#reveal-button").click(function(){
+                $("#banner-container").slideToggle("slow");
+            });
+
+            $("#wanan").dblclick(function(){
+                $(this).animate({
+                    width: '70%',
+                    height: 'auto'
+                }, 500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="reveal-button">Self Introduction</button>
+    <div id="banner-container">
+        <div class="banner-text">Hi, I'm Robin, a student in Taipei Municipal Daan Vocational High School, Dept. of Computer Science.</div>
+        <div class="banner-text">I'm interested in Computer Science, especially in Cyber Security.</div>
+        <div class="banner-text">Well-versed in Reverse Engineering and tools, such as IDA, gdb, radare2, angr...</div>
+        <div class="banner-text">Also, I'm learning Binary Exploitation  \&gt; v &lt;/</div>
+    </div>
+    <img class="abc" src="image.jpg" id="wanan">
+</body>
+</html>

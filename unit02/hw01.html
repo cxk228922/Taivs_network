@@ -1,0 +1,149 @@
+<!DOCTYPE html>               
+<html>                        
+<head>                      
+  <meta charset="UTF-8">    
+  <title>資訊二甲05江寬泓 2-1</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+    body {
+      background: linear-gradient(135deg, #1A1A1D, #0F0F10);
+      color: #C5C6C7;
+      margin: 0;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      color: #66FCF1;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding-bottom: 10px;
+      background: linear-gradient(to right, #66FCF1, #45A29E);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    }
+
+    p {
+      text-align: justify;
+      font-size: 1.1em;
+    }
+
+    .custom-font {
+      font-family: 'Courier New', monospace;
+      font-size: 1.1em;
+      color: #45A29E;
+    }
+
+    li {
+      margin: 5px 0;
+      color: #66FCF1;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    li::before {
+      content: ">>";
+      position: absolute;
+      left: 0;
+      color: #C5C6C7;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    a {
+      color: #66FCF1;
+      text-decoration: none;
+      border-bottom: 2px solid #66FCF1;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    a:hover {
+      color: #45A29E;
+      border-bottom: 2px solid #45A29E;
+      text-shadow: 0 0 5px #45A29E;
+    }
+
+    .content-section {
+      margin: 20px 0;
+      padding: 20px;
+      background: rgba(15, 15, 16, 0.8);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .content-section:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 5px #66FCF1, 0 0 10px #66FCF1, 0 0 15px #45A29E, 0 0 20px #45A29E;
+      }
+      100% {
+        text-shadow: 0 0 10px #66FCF1, 0 0 20px #66FCF1, 0 0 30px #45A29E, 0 0 40px #45A29E;
+      }
+    }
+  </style>
+</head>                     
+                            
+<body>                      
+  <div class="content-section">
+    <h1>Robin's Self Introduction</h1>
+    <p>Hi, I'm Robin, a student in Taipei Municipal Daan Vocational High School, Dept. of Computer Science.</p>
+    <p>I'm interested in Computer Science, especially in Cyber Security.</p>
+    <p>Well-versed in Reverse Engineering and tools, such as IDA, gdb, radare2, angr...</p>
+    <p>Also, I'm learning Binary Exploitation \&gt; v &lt;/</p>
+    <p>ROP is so hard （；´д｀）ゞ</p>
+    <img src="2-1.jpg" width="500" alt="cool">
+  </div>
+
+  <div class="content-section">
+    <h2>Experience</h2>
+    <ul>
+      <li class="custom-font">2023 - Enroll in Taivs</li>
+      <li class="custom-font">2023 - TOI台灣資訊奧林匹亞 - 海選100pts (I'm so nooob QQ)</li>
+      <li class="custom-font">2024 - iPAS資訊安全工程師 初級</li>
+      <li class="custom-font">2024 - 創立大安高工資訊安全研究社</li>
+      <li class="custom-font">2024 - 加入資訊安全戰隊ICEDTEA (新竹科學園區實驗高中)</li>
+    </ul>
+    <p>傻眼，沒了</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Contact me</h2>
+    <p><a href="https://www.instagram.com/cmaker117/">Instagram</a>: cmaker117</p>
+    <p>Discord: arc_testify</p>
+    <p>Email: ben042708@gmail.com</p>
+    <p>View my blog! <a href="https://cxk228922.github.io/">Click me</a></p>
+  </div>
+  
+  <div style="text-align: center; margin-top: 20px;">
+    <h2>Web visits</h2>
+    <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=16260688&style=0010&nbdigits=5&type=page&initCount=10" title="Counter Widget" Alt="Visit counter For Websites" border="0" />
+    </a>
+  </div>
+</body>
+</html>

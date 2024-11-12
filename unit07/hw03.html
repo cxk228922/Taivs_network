@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資訊二甲05 江寬泓 7-3</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-weight: 700;
+            color: #4CAF50;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        p {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function updateFormula() {
+            let a1 = parseFloat(document.getElementById("a1").value);
+            let an = parseFloat(document.getElementById("an").value);
+            let d = parseFloat(document.getElementById("d").value);
+            if (isNaN(a1) || isNaN(an) || isNaN(d)) {
+                alert("Please type number");
+                return;
+            }
+            if (d <= 0) {
+                alert("d must be greater than 0");
+                return;
+            }
+            if ((an - a1) < d) {
+                alert("Can't calculate");
+                return;
+            }
+            //let formula = `\\( S_n = \\sum_{i=1}^{n} (${a1} + (i - 1) \\cdot ${d}) \\)`;
+            let sum = 0;
+            for (let i = a1; i <= an; i += d) {
+                sum += i;
+            }
+            let result = `\\( S_n = ${sum} \\)`;
+            document.getElementById('CalcResult').innerHTML = result;
+            MathJax.typeset();
+        }
+        //
+    </script>
+</head>
+<body>
+    <h1>Arithmetic Sequence Calculator</h1>
+    <form>
+        <label for="a1">Minimal term (\( a_{1} \)):</label>
+        <input type="number" name="initial-term" id="a1"/><br><br>
+        <label for="an">Maximal term (\( a_{n} \)):</label>
+        <input type="number" name="initial-term" id="an"/><br><br>
+        <label for="d">Common difference (\( d \)):</label>
+        <input type="number" name="initial-term" id="d"/><br>
+    </form><br>
+    <button id="calc" onclick="updateFormula()">Calculate</button><br>
+    <!-- <p id="sigmaFormula">\( S_{n} = \frac{2}{n}\cdot (a_{1}+a_{n}) \)</p> -->
+    <p id="CalcResult">\( S_n = \)</p>
+</body>
+</html>

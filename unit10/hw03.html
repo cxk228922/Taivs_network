@@ -54,15 +54,19 @@
     </style>
 </head>
 <body>
-    <form action = "hw03.php" method = "post">
-        <label>Account : </label><br>
-        <input type="text" name="account" id="account"/><br><br>
-        <label>Password : </label><br>
-        <input type="text" name="passwd" id="passwd"/><br><br>
-        <label>ID : </label><br>
-        <input type="text" name="id" id="id"/><br><br>
+    <form action="hw03.php" method="post">
+        <label for="account">Account:</label><br>
+        <input type="text" name="account" id="account" placeholder="Enter your account" title="Account" required/><br><br>
+    
+        <label for="passwd">Password:</label><br>
+        <input type="password" name="passwd" id="passwd" placeholder="Enter your password" title="Password" required/><br><br>
+    
+        <label for="id">ID:</label><br>
+        <input type="text" name="id" id="id" placeholder="Enter your ID" title="ID" required/><br><br>
+    
         <button type="submit">Submit</button>
     </form>
+    
     
 </body>
 </html>

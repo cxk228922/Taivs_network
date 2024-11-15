@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+
     <title>Document</title>
     <style>
         body {
@@ -51,14 +55,18 @@
             background-color: #45a049;
         }
 
-        
     </style>
 </head>
 <body>
-    <?php
-        $name = $_POST['userInput'];
-        echo "Your Input: $name<br>";
-        echo "string length : ".strlen($name);
-    ?>
+    <form action = "hw02.php" method = "post">
+        <label for="a">\( a \):</label>
+        <input type="number" name="initial-term" id="a"/><br><br>
+        <label for="b">\( b \):</label>
+        <input type="number" name="initial-term" id="b"/><br><br>
+        <label for="c"> \( c \):</label>
+        <input type="number" name="initial-term" id="c"/><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    
 </body>
 </html>
